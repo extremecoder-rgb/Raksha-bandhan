@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rakhi Website Design</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Raksha Bandhan 2024</h1>
+        <p>"There is no better friend than a sister. And there is no better sister than you"</p>
+        <div id="countdown">
+            <div class="time-unit" id="days">
+                <span>Days</span>
+            </div>
+            <div class="time-unit" id="hours">
+                <span>Hours</span>
+            </div>
+            <div class="time-unit" id="mins">
+                <span>Minutes</span>
+            </div>
+            <div class="time-unit" id="secs">
+                <span>Seconds</span>
+            </div>
+        </div>
+        <div class="rakhi-images">
+            <img src="./pic.jpeg" alt="Rakhsha Bandhan Image">
+        </div>
+    </div>
+
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-image: url(pic.jpeg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+            color: #333;
+        }
+        .container{
+            background-color: rgba(225, 225, 225, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 600px;
+            transition: transform 0.3 ease, box-shadow 0.3s ease;
+        }
+        .container:hover{
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+        .container #h1{
+            color: #ff5722;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        .rakhi-images{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .rakhi-images img{
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            object-fit: cover;
+            border: 2px solid  #ff5722;
+            border-radius: 10px;
+            transform: transform 0.3 ease, box-shadow 0.3 ease;
+        }
+        .rakhi-images:hover{
+            transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        #countdown{
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            color: #d32f27;
+        }
+        .time-unit{
+            font-size: 2em;
+            margin: 0 10px;
+            background: #ffebee;
+            padding: 10px;
+            border-radius: 10px;
+            color: #d32f27;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1;
+        }
+        .time-unit span{
+            display: block;
+            font-size: 0.6em;
+            color: #555;
+        }
+    </style>
+
+
+
+
+    <script>
+        var countDownDate = new Date("Aug 19, 2024 00:00:00").getTime();
+        var countDownfunction = setInterval(function(){
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000* 60 * 60 * 24)) / (1000 * 60 * 60));
+            var mins = Math.floor((distance % (1000*60*60))/ (1000 * 60)) ;
+            var secs = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days + "<span>Days</span>";
+            document.getElementById("hours").innerHTML = hours + "<span>Hours</span>";
+            document.getElementById("mins").innerHTML = mins + "<span>Minutes</span>";
+            document.getElementById("secs").innerHTML = secs + "<span>Seconds</span>";
+
+            if(distance < 0){
+                clearInterval(countDownfunction);
+                doucument.getElementById("countdown").innerHTML = "<h1>Happy Rakshabandhan</h1>";
+            }
+        },1000)
+    </script>
+
+</body>
+
+
+</html>
